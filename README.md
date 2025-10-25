@@ -8,13 +8,14 @@ A beautiful, production-ready scheduler system built with React, TypeScript, Tai
 
 ### SignUp Page
 <p align="center">
-  <img src="./public/signup page.png" width="140" alt="Weekly Scheduler signup page"/>
+  <img src="./public/signup page.png" width="50%" alt="Weekly Scheduler signup page"/>
 </p>
 
 ### SignIn  Page
 <p align="center">
-  <img src="./public//signin page.png" width="48%" alt="signin page"/>
+  <img src="./public//signin page.png" width="50%" alt="signin page"/>
 </p>
+
 ### Dashboard Page
 <p align="center">
   <img src="./public/dashboard.png" width="48%" alt="Dashboard Preview"/>
