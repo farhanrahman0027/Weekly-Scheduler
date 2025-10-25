@@ -1,12 +1,14 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { Calendar, ChevronRight, Loader2 } from 'lucide-react';
+import { Calendar, ChevronRight, Loader2, LogOut } from 'lucide-react';
 import { DayColumn } from './components/DayColumn';
 import { SlotModal } from './components/SlotModal';
 import { DeleteModal } from './components/DeleteModal';
 import { DaySlot } from './lib/supabase';
 import { SchedulerService } from './services/schedulerService';
+import { useAuth } from './contexts/AuthContext';
 
 function App() {
+  const { user, signOut } = useAuth();
   const [weeks, setWeeks] = useState<Date[]>([]);
   const [slotsMap, setSlotsMap] = useState<Map<string, Map<string, DaySlot[]>>>(new Map());
   const [loading, setLoading] = useState(false);
@@ -182,13 +184,27 @@ function App() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-emerald-50">
       <header className="bg-white shadow-sm border-b border-slate-200 sticky top-0 z-10">
         <div className="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3">
-            <div className="p-2 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-xl shadow-lg">
-              <Calendar className="w-6 h-6 text-white" />
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="p-2 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-xl shadow-lg">
+                <Calendar className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h1 className="text-2xl font-bold text-slate-800">Weekly Scheduler</h1>
+                <p className="text-sm text-slate-500">Manage your recurring time slots</p>
+              </div>
             </div>
-            <div>
-              <h1 className="text-2xl font-bold text-slate-800">Weekly Scheduler</h1>
-              <p className="text-sm text-slate-500">Manage your recurring time slots</p>
+            <div className="flex items-center gap-4">
+              <div className="text-right">
+                <p className="text-sm font-medium text-slate-700">{user?.email}</p>
+              </div>
+              <button
+                onClick={signOut}
+                className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-700 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all"
+              >
+                <LogOut className="w-4 h-4" />
+                Sign Out
+              </button>
             </div>
           </div>
         </div>
