@@ -4,6 +4,26 @@ A beautiful, production-ready scheduler system built with React, TypeScript, Tai
 
 ![Weekly Scheduler](https://img.shields.io/badge/React-18.3.1-blue) ![TypeScript](https://img.shields.io/badge/TypeScript-5.5.3-blue) ![Tailwind](https://img.shields.io/badge/Tailwind-3.4.1-06B6D4) ![Supabase](https://img.shields.io/badge/Supabase-Latest-3ECF8E)
 
+## 🖼️ Demo 
+
+### SignUp Page
+<p align="center">
+  <img src="./public/signup page.png" width="140" alt="Weekly Scheduler signup page"/>
+</p>
+
+### SignIn  Page
+<p align="center">
+  <img src="./public//signin page.png" width="48%" alt="signin page"/>
+</p>
+### Dashboard Page
+<p align="center">
+  <img src="./public/dashboard.png" width="48%" alt="Dashboard Preview"/>
+  <img src="./public/create slot form.png" width="48%" alt="Footer Section"/>
+</p>
+
+
+---
+
 ## Features
 
 ### Core Functionality
@@ -243,16 +263,6 @@ Creates an exception to modify a slot on a specific date.
 
 #### `deleteSlotForDate(recurringSlotId, date)`
 Creates an exception to delete a slot on a specific date.
-
-## Contributing
-
-This is a take-home assignment project. For production use:
-
-1. Add user authentication
-2. Implement user-specific RLS policies
-3. Add comprehensive error handling
-4. Include unit and integration tests
-5. Add accessibility features (ARIA labels, keyboard navigation)
 
 ## License
 
