@@ -97,9 +97,16 @@ export class SchedulerService {
     startTime: string,
     endTime: string
   ): Promise<RecurringSlot> {
+    const { data: { user } } = await supabase.auth.getUser();
+
+    if (!user) {
+      throw new Error('User must be authenticated to create slots');
+    }
+
     const { data, error } = await supabase
       .from('recurring_slots')
       .insert({
+        user_id: user.id,
         day_of_week: dayOfWeek,
         start_time: startTime,
         end_time: endTime,
