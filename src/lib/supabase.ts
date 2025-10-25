@@ -11,6 +11,7 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
 export type RecurringSlot = {
   id: string;
+  user_id: string;
   day_of_week: number;
   start_time: string;
   end_time: string;
